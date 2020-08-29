@@ -225,6 +225,67 @@ class _RecommendedState extends State<Recommended> {
                           ),
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
+                        child: Card(
+                          color: Hexcolor('#B87C4C'),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(25.0),
+                              bottom: Radius.circular(25.0),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20.0, 15, 20, 0),
+                                child: Text(
+                                  'Basic Programming',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Poppins',
+                                      fontSize: 20),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(20, 5, 0, 20),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.55,
+                                      child: Text(
+                                        'Learning basic programming, using Python, Java or C++',
+                                        style: TextStyle(
+                                            color: Colors.white54,
+                                            fontFamily: 'Poppins',
+                                            fontSize: 12),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 120,
+                                    width: 120,
+                                    child: Image.network(
+                                        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/110px-Python-logo-notext.svg.png'),
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(20.0, 0, 0, 10),
+                                child: Icon(
+                                  Icons.code,
+                                  color: Colors.white54,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
