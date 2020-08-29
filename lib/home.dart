@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'recommend.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -120,26 +121,34 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(10.0, 20, 10, 0),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.7,
-                        child: Text(
-                          "Don't want to learn the above languages? Click me.",
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 18,
-                              color: Hexcolor('#008B81')),
+                InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10.0, 20, 10, 0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.7,
+                          child: Text(
+                            "Don't want to learn the above languages? Click me.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 18,
+                                color: Hexcolor('#008B81')),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                          height: 80,
-                          width: 80,
-                          child: Image.asset('images/hello.png'))
-                    ],
+                        SizedBox(
+                            height: 80,
+                            width: 80,
+                            child: Image.asset('images/hello.png'))
+                      ],
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Recommended()),
+                    );
+                  },
                 ),
               ],
             ),
