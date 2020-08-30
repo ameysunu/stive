@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Recommended extends StatefulWidget {
   @override
@@ -301,48 +302,116 @@ class _RecommendedState extends State<Recommended> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Card(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(25.0),
-                        bottom: Radius.circular(25.0),
+                  child: InkWell(
+                    child: Card(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(25.0),
+                          bottom: Radius.circular(25.0),
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 5),
+                            child: Text(
+                              'Publishers join Facebook in fearing advertising slowdown caused by iOS 14 privacy changes',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Center(
+                            child: Container(
+                              height: 200,
+                              width: 200,
+                              child: Image.network(
+                                  'https://upload.wikimedia.org/wikipedia/commons/4/45/IOS_14_Logo.png'),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 5, 20, 10),
+                            child: Text(
+                              'Source: 9to5Mac',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black45,
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 12),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 5),
-                          child: Text(
-                            'Publishers join Facebook in fearing advertising slowdown caused by iOS 14 privacy changes',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                color: Colors.black,
-                                fontSize: 15),
-                          ),
+                    onTap: () async {
+                      const url =
+                          'https://9to5mac.com/2020/08/28/publishers-fear-ad-slowdown-ios-14/';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                  child: InkWell(
+                    child: Card(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(25.0),
+                          bottom: Radius.circular(25.0),
                         ),
-                        Center(
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            child: Image.network(
-                                'https://upload.wikimedia.org/wikipedia/commons/4/45/IOS_14_Logo.png'),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 5),
+                            child: Text(
+                              'Fortnite vs Apple vs Google: a brief and very incomplete timeline',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                  fontSize: 15),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 5, 20, 10),
-                          child: Text(
-                            'Source: 9to5Mac',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                color: Colors.black45,
-                                fontStyle: FontStyle.italic,
-                                fontSize: 12),
+                          Center(
+                            child: Container(
+                              height: 250,
+                              width: 250,
+                              child: Image.network(
+                                  'https://i.ibb.co/4Tvkqgv/fortnite.webp'),
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 5, 20, 10),
+                            child: Text(
+                              'Source: The Verge',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black45,
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 12),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
+                    onTap: () async {
+                      const url =
+                          'https://www.theverge.com/2020/8/14/21368504/fortnite-apple-google-app-store-brief-incomplete-timeline';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
                   ),
                 ),
               ],
