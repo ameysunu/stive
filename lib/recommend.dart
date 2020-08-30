@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:stive/flutter.dart';
 import 'package:stive/react.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -116,63 +117,73 @@ class _RecommendedState extends State<Recommended> {
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
-                        child: Card(
-                          color: Hexcolor('#CF9EAC'),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(25.0),
-                              bottom: Radius.circular(25.0),
-                            ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(20.0, 15, 20, 0),
-                                child: Text(
-                                  'Flutter Development',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20),
-                                ),
+                        child: InkWell(
+                          child: Card(
+                            color: Hexcolor('#CF9EAC'),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25.0),
+                                bottom: Radius.circular(25.0),
                               ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(20, 5, 0, 20),
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.55,
-                                      child: Text(
-                                        'A powerful native app development tool by Google for mobile and web',
-                                        style: TextStyle(
-                                            color: Colors.black54,
-                                            fontFamily: 'Poppins',
-                                            fontSize: 12),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                      20.0, 15, 20, 0),
+                                  child: Text(
+                                    'Flutter Development',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: 'Poppins',
+                                        fontSize: 20),
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 5, 0, 20),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.55,
+                                        child: Text(
+                                          'A powerful native app development tool by Google for mobile and web',
+                                          style: TextStyle(
+                                              color: Colors.black54,
+                                              fontFamily: 'Poppins',
+                                              fontSize: 12),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 120,
-                                    width: 120,
-                                    child: Image.network(
-                                        'https://i.ibb.co/HHFbFHw/Google-flutter-logo.png'),
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(20.0, 0, 0, 10),
-                                child: Icon(
-                                  Icons.code,
-                                  color: Colors.black54,
+                                    SizedBox(
+                                      height: 120,
+                                      width: 120,
+                                      child: Image.network(
+                                          'https://i.ibb.co/HHFbFHw/Google-flutter-logo.png'),
+                                    )
+                                  ],
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20.0, 0, 0, 10),
+                                  child: Icon(
+                                    Icons.code,
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Flutter()),
+                            );
+                          },
                         ),
                       ),
                       Padding(
