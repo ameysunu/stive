@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:stive/react.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Recommended extends StatefulWidget {
@@ -45,63 +46,72 @@ class _RecommendedState extends State<Recommended> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
-                        child: Card(
-                          color: Hexcolor('#595F7A'),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(25.0),
-                              bottom: Radius.circular(25.0),
-                            ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(20.0, 15, 20, 0),
-                                child: Text(
-                                  'React Native and React JS',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20),
-                                ),
+                        child: InkWell(
+                          child: Card(
+                            color: Hexcolor('#595F7A'),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25.0),
+                                bottom: Radius.circular(25.0),
                               ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(20, 5, 0, 20),
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.55,
-                                      child: Text(
-                                        'Native App Development using Facebook\'s programming tool.',
-                                        style: TextStyle(
-                                            color: Colors.white54,
-                                            fontFamily: 'Poppins',
-                                            fontSize: 12),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                      20.0, 15, 20, 0),
+                                  child: Text(
+                                    'React Native and React JS',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Poppins',
+                                        fontSize: 20),
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 5, 0, 20),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.55,
+                                        child: Text(
+                                          'Native App Development using Facebook\'s programming tool.',
+                                          style: TextStyle(
+                                              color: Colors.white54,
+                                              fontFamily: 'Poppins',
+                                              fontSize: 12),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 120,
-                                    width: 120,
-                                    child: Image.network(
-                                        'https://i.ibb.co/F6TpxZM/react.png'),
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(20.0, 0, 0, 10),
-                                child: Icon(
-                                  Icons.code,
-                                  color: Colors.white54,
+                                    SizedBox(
+                                      height: 120,
+                                      width: 120,
+                                      child: Image.network(
+                                          'https://i.ibb.co/F6TpxZM/react.png'),
+                                    )
+                                  ],
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20.0, 0, 0, 10),
+                                  child: Icon(
+                                    Icons.code,
+                                    color: Colors.white54,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => React()),
+                            );
+                          },
                         ),
                       ),
                       Padding(
