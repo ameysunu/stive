@@ -44,3 +44,9 @@ flutter build ios
 ```
 After the commands are run, run the Runner on XCode.
 
+## Screenshots
+<img src= "Screenshots/home.png" width="414" height="896" >  <img src= "Screenshots/discover.png" width="414" height="896" > 
+<br> <br>
+<img src= "Screenshots/news.png" width="414" height="896" > <img src= "Screenshots/react.png" width="414" height="896" >  
+<br> <br>
+<img src= "Screenshots/flutter.png" width="414" height="896" > 
