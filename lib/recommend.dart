@@ -289,6 +289,62 @@ class _RecommendedState extends State<Recommended> {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    "What's new in the technical world?",
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 18),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  child: Card(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(25.0),
+                        bottom: Radius.circular(25.0),
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 5),
+                          child: Text(
+                            'Publishers join Facebook in fearing advertising slowdown caused by iOS 14 privacy changes',
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                fontSize: 15),
+                          ),
+                        ),
+                        Center(
+                          child: Container(
+                            height: 200,
+                            width: 200,
+                            child: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/4/45/IOS_14_Logo.png'),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 5, 20, 10),
+                          child: Text(
+                            'Source: 9to5Mac',
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black45,
+                                fontStyle: FontStyle.italic,
+                                fontSize: 12),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
