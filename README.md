@@ -1,7 +1,9 @@
 # Stive
 
 An app, that gives information regarding your coding and app development platforms during Summer to make it productive and by the way,  Stive: Summer + Productive ;)
-
+<br>
+<br>
+[![Codemagic build status](https://api.codemagic.io/apps/5f4b8f0aa0480468eb9db058/5f4b8f0aa0480468eb9db057/status_badge.svg)](https://codemagic.io/apps/5f4b8f0aa0480468eb9db058/5f4b8f0aa0480468eb9db057/latest_build)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
