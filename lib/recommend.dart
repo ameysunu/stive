@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:stive/flutter.dart';
+import 'package:stive/kubernetes.dart';
 import 'package:stive/react.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -188,64 +189,74 @@ class _RecommendedState extends State<Recommended> {
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
-                        child: Card(
-                          color: Hexcolor('#00AAA9'),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(25.0),
-                              bottom: Radius.circular(25.0),
-                            ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(20.0, 15, 20, 0),
-                                child: Text(
-                                  'Kubernetes',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20),
+                        child: InkWell(
+                            child: Card(
+                              color: Hexcolor('#00AAA9'),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(25.0),
+                                  bottom: Radius.circular(25.0),
                                 ),
                               ),
-                              Row(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(20, 5, 0, 20),
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.55,
-                                      child: Text(
-                                        'an open-source container-orchestration system for automating computer application deployment',
-                                        style: TextStyle(
-                                            color: Colors.black54,
-                                            fontFamily: 'Poppins',
-                                            fontSize: 12),
-                                      ),
+                                    padding: const EdgeInsets.fromLTRB(
+                                        20.0, 15, 20, 0),
+                                    child: Text(
+                                      'Kubernetes',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Poppins',
+                                          fontSize: 20),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 120,
-                                    width: 120,
-                                    child: Image.network(
-                                        'https://i.ibb.co/0XCqBPj/kubernetes-seeklogo-com.png'),
-                                  )
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            20, 5, 0, 20),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.55,
+                                          child: Text(
+                                            'an open-source container-orchestration system for automating computer application deployment',
+                                            style: TextStyle(
+                                                color: Colors.black54,
+                                                fontFamily: 'Poppins',
+                                                fontSize: 12),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 120,
+                                        width: 120,
+                                        child: Image.network(
+                                            'https://i.ibb.co/0XCqBPj/kubernetes-seeklogo-com.png'),
+                                      )
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        20.0, 0, 0, 10),
+                                    child: Icon(
+                                      Icons.code,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
                                 ],
                               ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(20.0, 0, 0, 10),
-                                child: Icon(
-                                  Icons.code,
-                                  color: Colors.black54,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Kubernetes()),
+                              );
+                            }),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
